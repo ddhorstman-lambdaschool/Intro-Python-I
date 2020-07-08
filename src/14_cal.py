@@ -30,3 +30,17 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+now = datetime.now()
+if(len(sys.argv)==1):
+  month = now.month
+  year = now.year
+elif(len(sys.argv)==2):
+  month = int(sys.argv[1])
+  year=now.year
+elif(len(sys.argv)==3):
+  month = int(sys.argv[1])
+  year = int(sys.argv[2])
+else:
+  print("Usage: 14_cal.py [month] [year]")
+  exit()
+print(calendar.month(year, month))
